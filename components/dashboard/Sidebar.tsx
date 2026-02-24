@@ -35,9 +35,14 @@ function SectionLabel({
   if (collapsed) return null;
 
   return (
-    <div className="px-6 pt-8 pb-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">
-      {children}
-    </div>
+    <>
+      <hr className="mx-6 border-slate-200 my-6" />
+      {!collapsed && (
+        <div className="px-6 pt-5 pb-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">
+          {children}
+        </div>
+      )}
+    </>
   );
 }
 
