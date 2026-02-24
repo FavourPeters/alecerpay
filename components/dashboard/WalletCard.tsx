@@ -6,8 +6,8 @@ import { Eye, EyeOff, Copy, BadgeCheck, Award } from "lucide-react";
 export type Wallet = {
   id: string;
   currency: "NGN" | "USD" | "GBP" | "EUR";
-  flag: string;
   balance: number;
+  flagCode: string;
   accountMasked: string;
   badge:
     | { type: "kyc1"; label: "KYC Level 1" }
@@ -97,7 +97,7 @@ export default function WalletCard({
         : "Show";
 
   return (
-    <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+    <div className="rounded-2xl bg-white p-6 shadow-md ring-1 ring-slate-200">
       {/* Badge top-right only */}
       <div className="flex justify-end">
         <WalletBadge badge={wallet.badge} />
@@ -105,7 +105,11 @@ export default function WalletCard({
 
       {/* Flag + currency */}
       <div className="mt-4 flex items-center gap-2">
-        <span className="text-2xl">{wallet.flag}</span>
+        <img
+          src={`https://flagcdn.com/w40/${wallet.flagCode}.png`}
+          alt={wallet.currency}
+          className="h-6 w-8 rounded-sm object-cover"
+        />
         <span className="text-base font-semibold text-slate-700">
           {wallet.currency}
         </span>

@@ -10,7 +10,7 @@ export type Tx = {
   status: "Completed" | "Pending" | "Reversed";
   statusTone: "success" | "warning" | "danger";
   avatarTone: "mint" | "sky" | "rose";
-  flag?: string; // e.g. "🇺🇸"
+  flagCode?: string;
 };
 
 function toneStyles(tone: Tx["statusTone"]) {
@@ -62,10 +62,12 @@ export default function TransactionsCard({
                   <Icon className="h-4 w-4" />
 
                   {/* flag badge (bottom-right) */}
-                  {t.flag ? (
-                    <span className="absolute -bottom-1 -right-1 text-[14px] leading-none">
-                      {t.flag}
-                    </span>
+                  {t.flagCode ? (
+                    <img
+                      src={`https://flagcdn.com/w20/${t.flagCode}.png`}
+                      alt={t.flagCode}
+                      className="absolute -bottom-1 -right-1 h-4 w-4 rounded-full object-cover ring-1 ring-white"
+                    />
                   ) : null}
                 </div>
 

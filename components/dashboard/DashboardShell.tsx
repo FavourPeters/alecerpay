@@ -31,7 +31,7 @@ export default function DashboardShell() {
       {
         id: "ngn",
         currency: "NGN",
-        flag: "🇳🇬",
+        flagCode: "ng",
         balance: 5280.5,
         badge: { type: "kyc1", label: "KYC Level 1" },
         accountMasked: "****95403",
@@ -39,7 +39,7 @@ export default function DashboardShell() {
       {
         id: "usd",
         currency: "USD",
-        flag: "🇺🇸",
+        flagCode: "us",
         balance: 3150.0,
         badge: { type: "kyc2", label: "KYC Level 2" },
         accountMasked: "****95403",
@@ -47,7 +47,7 @@ export default function DashboardShell() {
       {
         id: "gbp",
         currency: "GBP",
-        flag: "🇬🇧",
+        flagCode: "gb",
         balance: 5280.5,
         badge: { type: "kyc2", label: "KYC Level 2" },
         accountMasked: "****95403",
@@ -55,7 +55,7 @@ export default function DashboardShell() {
       {
         id: "eur",
         currency: "EUR",
-        flag: "🇪🇺",
+        flagCode: "eu",
         balance: 4900.0,
         badge: { type: "verified", label: "Verified" },
         badgeTone: "verified",
@@ -84,7 +84,7 @@ export default function DashboardShell() {
         status: "Completed",
         statusTone: "success",
         avatarTone: "mint",
-        flag: "🇺🇸",
+        flagCode: "us",
       },
       {
         name: "Sarah Johnson",
@@ -101,7 +101,7 @@ export default function DashboardShell() {
         status: "Completed",
         statusTone: "success",
         avatarTone: "rose",
-        flag: "🇳🇬",
+        flagCode: "ng",
       },
       {
         name: "Monthly Subscription",
@@ -110,7 +110,7 @@ export default function DashboardShell() {
         status: "Reversed",
         statusTone: "danger",
         avatarTone: "mint",
-        flag: "🇳🇬",
+        flagCode: "ng",
       },
     ],
     [],
@@ -166,6 +166,7 @@ export default function DashboardShell() {
           </header>
 
           {/* Wallets */}
+
           <section className="mb-5">
             <div className="mb-3 flex items-center justify-between">
               <h2 className="text-lg font-semibold">Your Wallets</h2>
@@ -216,13 +217,15 @@ export default function DashboardShell() {
           </section>
 
           {/* Actions */}
-          <section className="mb-6">
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
-              {actions.map((a) => (
-                <ActionTile key={a.label} item={a} />
-              ))}
-            </div>
-          </section>
+          <div className="mb-6 py-6 px-4 border-2 border-slate-200 rounded-xl">
+            <section>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+                {actions.map((a) => (
+                  <ActionTile key={a.label} item={a} />
+                ))}
+              </div>
+            </section>
+          </div>
 
           {/* Transactions */}
           <section className="pb-10">
