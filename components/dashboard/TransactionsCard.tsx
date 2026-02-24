@@ -37,7 +37,7 @@ export default function TransactionsCard({
         <h3 className="text-lg font-medium">Recent Transactions</h3>
         <Link
           href="#"
-          className="text-sm font-semibold text-blue-600 hover:underline"
+          className="text-sm font-semibold text-primary hover:underline"
         >
           View All
         </Link>
