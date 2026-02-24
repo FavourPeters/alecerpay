@@ -64,7 +64,7 @@ function NavItem({
           : "mx-3 flex items-center gap-3 rounded-xl px-4 py-2.5 text-sm transition",
         active
           ? "bg-primary text-white shadow-sm"
-          : "text-slate-600 hover:bg-slate-100 hover:text-slate-900",
+          : "text-slate-600 hover:bg-primary hover:text-white",
       ].join(" ")}
     >
       <Icon className="h-4 w-4 shrink-0" />
@@ -112,7 +112,7 @@ export default function Sidebar({
             {/* Logo */}
             {collapsed ? (
               <img
-                src="/alecer.svg"
+                src="/logo-img.png"
                 alt="AlecerPay"
                 className="h-8 w-8 object-contain"
                 draggable={false}
