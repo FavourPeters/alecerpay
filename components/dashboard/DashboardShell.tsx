@@ -178,9 +178,9 @@ export default function DashboardShell() {
                   className="inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-slate-600 hover:bg-slate-100 hover:text-slate-900"
                 >
                   {globalShow ? (
-                    <EyeOff className="h-4 w-4" />
-                  ) : (
                     <Eye className="h-4 w-4" />
+                  ) : (
+                    <EyeOff className="h-4 w-4" />
                   )}
                   {globalShow ? "Hide" : "Show"}
                 </button>
