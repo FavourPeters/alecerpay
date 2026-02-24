@@ -97,44 +97,48 @@ export default function WalletCard({
         : "Show";
 
   return (
-    <div className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-slate-200">
-      <div className="flex items-start justify-between">
-        <div className="flex items-center gap-2">
-          <span className="text-xl">{wallet.flag}</span>
-          <span className="text-sm font-semibold text-slate-700">
-            {wallet.currency}
-          </span>
-        </div>
-
+    <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+      {/* Badge top-right only */}
+      <div className="flex justify-end">
         <WalletBadge badge={wallet.badge} />
       </div>
 
+      {/* Flag + currency */}
+      <div className="mt-4 flex items-center gap-2">
+        <span className="text-2xl">{wallet.flag}</span>
+        <span className="text-base font-semibold text-slate-700">
+          {wallet.currency}
+        </span>
+      </div>
+
+      {/* Balance + eye */}
       <div className="mt-4 flex items-center justify-between">
-        <div className="text-2xl font-semibold tracking-tight">
+        <div className="text-4xl font-semibold tracking-tight text-slate-900">
           {displayBalance}
         </div>
 
         <button
           type="button"
           onClick={() => onToggleOverride(wallet.id)}
-          className="rounded-xl p-2 text-slate-500 hover:bg-slate-100"
+          className="rounded-xl p-2 text-slate-400 hover:bg-slate-100"
           aria-label={isVisible ? "Hide balance" : "Show balance"}
           title={eyeTitle}
         >
           {isVisible ? (
-            <EyeOff className="h-4 w-4" />
+            <EyeOff className="h-5 w-5" />
           ) : (
-            <Eye className="h-4 w-4" />
+            <Eye className="h-5 w-5" />
           )}
         </button>
       </div>
 
-      <div className="mt-5 flex items-center gap-2 text-xs text-slate-500">
+      {/* Account masked */}
+      <div className="mt-8 flex items-center gap-2 text-xs text-slate-400">
         <span className="rounded-md bg-slate-100 px-2 py-1">
           {wallet.accountMasked}
         </span>
         <button
-          className="rounded-md p-1 text-slate-500 hover:bg-slate-100"
+          className="rounded-md p-1 text-primary hover:bg-slate-100"
           aria-label="Copy account"
           onClick={() => navigator.clipboard?.writeText(wallet.accountMasked)}
         >
