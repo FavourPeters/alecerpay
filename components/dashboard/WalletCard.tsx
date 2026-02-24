@@ -53,7 +53,7 @@ export default function WalletCard({
   function WalletBadge({ badge }: { badge: Wallet["badge"] }) {
     if (badge.type === "verified") {
       return (
-        <div className="flex items-center gap-1 text-sm font-semibold text-primary">
+        <div className="flex items-center gap-1 text-xs font-medium text-primary">
           <BadgeCheck className="h-4 w-4 fill-primary text-white" />
           {badge.label}
         </div>
@@ -62,7 +62,7 @@ export default function WalletCard({
 
     if (badge.type === "kyc1") {
       return (
-        <div className="flex items-center gap-1 rounded-full bg-lblue px-3 py-1 text-xs font-semibold text-primary">
+        <div className="flex items-center gap-1 rounded-full bg-lblue px-3 py-1 text-xs font-medium text-primary">
           <Award className="h-3.5 w-3.5" />
           {badge.label}
         </div>
@@ -71,7 +71,7 @@ export default function WalletCard({
 
     if (badge.type === "kyc2") {
       return (
-        <div className="flex items-center gap-1 rounded-full bg-lgreen px-3 py-1 text-xs font-semibold text-dgreen">
+        <div className="flex items-center gap-1 rounded-full bg-lgreen px-3 py-1 text-xs font-medium text-dgreen">
           <Award className="h-3.5 w-3.5" />
           {badge.label}
         </div>
