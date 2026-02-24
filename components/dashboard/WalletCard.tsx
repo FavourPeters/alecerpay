@@ -110,14 +110,12 @@ export default function WalletCard({
           alt={wallet.currency}
           className="h-6 w-8 rounded-sm object-cover"
         />
-        <span className="text-base font-semibold text-slate-700">
-          {wallet.currency}
-        </span>
+        <span className="text-base  text-slate-700">{wallet.currency}</span>
       </div>
 
       {/* Balance + eye */}
       <div className="mt-4 flex items-center justify-between">
-        <div className="text-4xl font-semibold tracking-tight text-slate-900">
+        <div className="text-2xl font-semibold tracking-tight text-slate-900">
           {displayBalance}
         </div>
 

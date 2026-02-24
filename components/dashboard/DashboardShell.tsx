@@ -85,6 +85,7 @@ export default function DashboardShell() {
         statusTone: "success",
         avatarTone: "mint",
         flagCode: "us",
+        type: "incoming",
       },
       {
         name: "Sarah Johnson",
@@ -93,6 +94,7 @@ export default function DashboardShell() {
         status: "Pending",
         statusTone: "warning",
         avatarTone: "sky",
+        type: "convert",
       },
       {
         name: "Tech Corp Ltd",
@@ -102,6 +104,7 @@ export default function DashboardShell() {
         statusTone: "success",
         avatarTone: "rose",
         flagCode: "ng",
+        type: "outgoing",
       },
       {
         name: "Monthly Subscription",
@@ -111,6 +114,7 @@ export default function DashboardShell() {
         statusTone: "danger",
         avatarTone: "mint",
         flagCode: "ng",
+        type: "incoming",
       },
     ],
     [],
@@ -169,7 +173,7 @@ export default function DashboardShell() {
 
           <section className="mb-5">
             <div className="mb-3 flex items-center justify-between">
-              <h2 className="text-lg font-semibold">Your Wallets</h2>
+              <h2 className="text-2xl font-semibold">Your Wallets</h2>
 
               <div className="flex items-center gap-3">
                 {/* Global toggle */}

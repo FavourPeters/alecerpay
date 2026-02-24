@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowDownLeft, ArrowUpRight } from "lucide-react";
+import { ArrowDownLeft, ArrowUpRight, ArrowLeftRight } from "lucide-react";
 
 export type Tx = {
   name: string;
@@ -11,6 +11,7 @@ export type Tx = {
   statusTone: "success" | "warning" | "danger";
   avatarTone: "mint" | "sky" | "rose";
   flagCode?: string;
+  type?: "incoming" | "outgoing" | "convert";
 };
 
 function toneStyles(tone: Tx["statusTone"]) {
@@ -20,9 +21,9 @@ function toneStyles(tone: Tx["statusTone"]) {
 }
 
 function avatarBg(tone: Tx["avatarTone"]) {
-  if (tone === "mint") return "bg-emerald-50 text-emerald-700";
-  if (tone === "sky") return "bg-sky-50 text-sky-700";
-  return "bg-rose-50 text-rose-700";
+  if (tone === "mint") return "bg-emerald-50 text-emerald-500";
+  if (tone === "sky") return "bg-blue-50 text-blue-500";
+  return "bg-rose-50 text-rose-500";
 }
 
 export default function TransactionsCard({
@@ -33,7 +34,7 @@ export default function TransactionsCard({
   return (
     <div className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
       <div className="mb-4 flex items-center justify-between">
-        <h3 className="text-base font-semibold">Recent Transactions</h3>
+        <h3 className="text-lg font-medium">Recent Transactions</h3>
         <Link
           href="#"
           className="text-sm font-semibold text-blue-600 hover:underline"
@@ -45,8 +46,13 @@ export default function TransactionsCard({
       <div className="divide-y divide-slate-100">
         {transactions.map((t) => {
           const isPositive = t.amount.trim().startsWith("+");
-          const Icon = isPositive ? ArrowDownLeft : ArrowUpRight;
 
+          const Icon =
+            t.type === "convert"
+              ? ArrowLeftRight
+              : isPositive
+                ? ArrowDownLeft
+                : ArrowUpRight;
           return (
             <div
               key={`${t.name}-${t.meta}`}
@@ -72,7 +78,7 @@ export default function TransactionsCard({
                 </div>
 
                 <div>
-                  <p className="text-sm font-semibold text-slate-900">
+                  <p className="text-base font-medium text-slate-900">
                     {t.name}
                   </p>
                   <p className="text-xs text-slate-500">{t.meta}</p>

@@ -99,7 +99,7 @@ export default function Sidebar({
 
       <aside
         className={[
-          "fixed left-0 top-0 z-50 h-screen border-r border-slate-200 bg-[#eef5ff]",
+          "fixed font-inter left-0 top-0 z-50 h-screen border-r border-slate-200 bg-[#eef5ff]",
           "transition-[width,transform] duration-200 ease-in-out",
           "lg:translate-x-0",
           widthClass,
