@@ -9,8 +9,8 @@ import {
   ArrowDownToLine,
   CreditCard,
   FileText,
-  BarChart2,
-  Settings2,
+  BarChart3,
+  Settings,
   LogOut,
   UserSquare,
   X,
@@ -36,9 +36,9 @@ function SectionLabel({
 
   return (
     <>
-      <hr className="mx-6 border-slate-200 my-6" />
+      <hr className="mx-6 border-slate-200 my-3" />
       {!collapsed && (
-        <div className="px-6 pt-5 pb-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">
+        <div className="px-8 pt-5 pb-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">
           {children}
         </div>
       )}
@@ -189,8 +189,8 @@ export default function Sidebar({
             <NavItem icon={FileText} label="Invoices" collapsed={collapsed} />
 
             <SectionLabel collapsed={collapsed}>SUPPORT</SectionLabel>
-            <NavItem icon={BarChart2} label="Analytics" collapsed={collapsed} />
-            <NavItem icon={Settings2} label="Settings" collapsed={collapsed} />
+            <NavItem icon={BarChart3} label="Analytics" collapsed={collapsed} />
+            <NavItem icon={Settings} label="Settings" collapsed={collapsed} />
           </nav>
 
           {/* Bottom */}
