@@ -38,7 +38,7 @@ function SectionLabel({
     <>
       <hr className="mx-6 border-slate-200 my-3" />
       {!collapsed && (
-        <div className="px-8 pt-5 pb-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">
+        <div className="px-7 pt-5 pb-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">
           {children}
         </div>
       )}
